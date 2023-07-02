@@ -250,3 +250,35 @@ Here’s the completed `pom.xml` file:
 + To run this project run the following command.
 
     `java -cp target/jb-hello-world-maven-0.1.0.jar hello.HelloWorld`
+
+
+******************************************************
+## pipeline-git
+
+  pipeline {
+    agent any
+     // Install the Maven version configured as "M3" and add it to the path.
+     tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "maven3"
+    }
+   
+    
+   stages {
+        stage('clone') {
+            steps {
+                // Get some code from a GitHub repository
+                git credentialsId: 'github', url: 'https://github.com/harshalgaikwad25/java-hello-world-with-maven.git'
+
+              
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+
+            }
+            
+            }
+    }
+}
