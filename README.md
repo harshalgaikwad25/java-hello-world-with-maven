@@ -255,7 +255,7 @@ Here’s the completed `pom.xml` file:
 ******************************************************
 ## pipeline-git
 
- pipeline {
++ pipeline {
     agent any
      // Install the Maven version configured as "M3" and add it to the path.
      tools {
