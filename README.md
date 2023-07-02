@@ -261,22 +261,18 @@ Here’s the completed `pom.xml` file:
      tools {
         // Install the Maven version configured as "M3" and add it to the path.
         maven "maven3"
-    }
+ }
    stages {
         stage('clone') {
             steps {
                 // Get some code from a GitHub repository
-                git credentialsId: 'github', url: 'https://github.com/harshalgaikwad25/java-hello-world-with-maven.git'
-
-              
+                git credentialsId: 'github', url: 'https://github.com/harshalgaikwad25/java-hello-world-with-maven.git' 
             }
         }
         stage('Build') {
             steps {
                 sh 'mvn clean package'
-
-            }
-            
+            }  
             }
     }
 }
