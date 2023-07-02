@@ -254,6 +254,7 @@ Here’s the completed `pom.xml` file:
 
 ******************************************************
 ## pipeline-git
+---
 
   pipeline {
     agent any
@@ -262,8 +263,6 @@ Here’s the completed `pom.xml` file:
         // Install the Maven version configured as "M3" and add it to the path.
         maven "maven3"
     }
-   
-    
    stages {
         stage('clone') {
             steps {
